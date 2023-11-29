@@ -21,10 +21,6 @@
 		on_finish: function() {
 			document.exitFullscreen();
 	
-        const subject_id = jsPsych.randomization.randomID(10);
-        const filename = `${subject_id}.csv`;
-            
-
 	//定义结束语
 	jsPsych.getDisplayElement().innerHTML =  `
 			<p>ご協力ありがとうございました。</p>
@@ -34,6 +30,8 @@
 		`;
 		}
 	});
+	const subject_id = jsPsych.randomization.randomID(10);
+        const filename = `${subject_id}.csv`;
 	// 创建一个jspsych实验对象
 	var timeline = [];
 
