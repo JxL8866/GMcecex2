@@ -600,7 +600,16 @@
 	}
 
 	timeline.push(experiment_trial);
-
+	  
+  	// 定义一个等待界面
+	  var wait_trial = {
+            type: jsPsychHtmlKeyboardResponse,
+			stimulus: '<p style="font-size: 48px;">作業コードが表示されるまで，そのままお待ちください。</p>',
+			choices: "NO_KEYS",
+			trial_duration: 5000
+        };
+	    timeline.push(wait_trial);
+	  
         const save_data = {
                 type: jsPsychPipe,
                 action: "save",
