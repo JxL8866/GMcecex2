@@ -214,6 +214,26 @@
 	// 将nationality_input_conditional添加到实验的时间线中
 	timeline.push(nationality_input_conditional);
 
+	  	//定义一个惯用手
+		var handedness_question = {
+		type: jsPsychSurveyMultiChoice,
+		questions: [
+			{
+				prompt: "あなたの利き手を教えてください。", name: 'gender', options: ["左利き", "右利き"],
+				required: true
+			},
+		],
+		button_label: '次へ',
+		data: {
+			trial_id: 'handedness'
+		},
+		on_finish: function(data){
+			data.handedness = data.response.handedness;
+		}
+	};
+	timeline.push(handedness_question);
+	  
+        //定义是否是对于颜色不敏感 
 	var colorBlindness_question = {
 		type: jsPsychSurveyMultiChoice,
 		questions: [
